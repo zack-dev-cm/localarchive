@@ -1,0 +1,10 @@
+{
+  "name": "localarchive",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Local-first Chrome extension for saving pages, importing Pocket exports, and exporting portable archives.",
+  "scripts": {
+    "test": "node --test"
+  }
+}

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LocalArchive Library</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="library-shell">
+      <header class="library-header">
+        <div>
+          <h1>LocalArchive</h1>
+          <p id="libraryStatus" role="status">Ready</p>
+        </div>
+        <div class="toolbar" aria-label="Archive actions">
+          <button id="importCsvButton" type="button">Import CSV</button>
+          <button id="importJsonButton" type="button">Import JSON</button>
+          <button id="exportJsonButton" type="button">Export JSON</button>
+        </div>
+      </header>
+
+      <section class="search-row" aria-label="Search">
+        <input id="searchInput" type="search" placeholder="Search archive" autocomplete="off">
+      </section>
+
+      <section class="library-grid">
+        <aside class="article-list" aria-label="Articles">
+          <div id="articleList" class="article-list-inner"></div>
+        </aside>
+        <article class="article-detail" aria-label="Selected article">
+          <div id="emptyState" class="empty-state">No article selected</div>
+          <div id="detailPanel" class="detail-panel" hidden>
+            <div class="detail-topline">
+              <p id="detailDomain"></p>
+              <p id="detailMeta"></p>
+            </div>
+            <h2 id="detailTitle"></h2>
+            <p id="detailUrl"></p>
+            <p id="detailExcerpt"></p>
+            <blockquote id="detailSelection" class="detail-selection" hidden></blockquote>
+            <div class="detail-actions" aria-label="Selected article actions">
+              <button id="exportMarkdownButton" type="button">Markdown</button>
+              <button id="exportHtmlButton" type="button">HTML</button>
+              <button id="deleteButton" class="danger" type="button">Delete</button>
+            </div>
+            <pre id="detailText"></pre>
+          </div>
+        </article>
+      </section>
+
+      <input id="csvInput" type="file" accept=".csv,text/csv" hidden>
+      <input id="jsonInput" type="file" accept=".json,application/json" hidden>
+    </main>
+    <script type="module" src="library.js"></script>
+  </body>
+</html>
