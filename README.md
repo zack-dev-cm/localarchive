@@ -54,3 +54,6 @@ Chrome Web Store listing URLs, privacy disclosures, permission justifications,
 and reviewer notes are tracked in [`docs/cws/listing.json`](docs/cws/listing.json).
 The public homepage, privacy policy, support page, and reviewer guide are served
 from Cloudflare Pages using the static source in [`site/`](site/).
+
+Publication history and follow-up submission notes are tracked in
+[`docs/cws/publication-log.md`](docs/cws/publication-log.md).
