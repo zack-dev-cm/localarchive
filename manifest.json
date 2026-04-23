@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "LocalArchive",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Local-first page archive with Pocket import and portable exports.",
   "minimum_chrome_version": "114",
   "icons": {
@@ -10,7 +10,7 @@
     "48": "assets/icon-48.png",
     "128": "assets/icon-128.png"
   },
-  "permissions": ["activeTab", "contextMenus", "downloads", "scripting", "sidePanel", "storage"],
+  "permissions": ["activeTab", "contextMenus", "downloads", "scripting", "sidePanel"],
   "background": {
     "service_worker": "src/background.js",
     "type": "module"

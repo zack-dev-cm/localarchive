@@ -1,6 +1,6 @@
 # LocalArchive Privacy Policy
 
-Effective date: 2026-04-22
+Effective date: 2026-04-23
 
 LocalArchive is a local-first Chrome extension for saving pages and selected
 text into the browser profile.
@@ -28,11 +28,25 @@ The MVP does not send captured pages, selected text, imports, exports, search
 queries, or archive metadata to a server. It has no analytics endpoint and no
 advertising endpoint.
 
+## Chrome Web Store User Data Policy and Limited Use
+
+LocalArchive's use of information received from Chrome APIs complies with the
+Chrome Web Store User Data Policy, including the Limited Use requirements. User
+data is used only for LocalArchive's single purpose: local page capture, local
+archive search, user-controlled import, and user-controlled export.
+
+## Third-Party Transfer, Ads, and Sale
+
+No ads are included. No analytics endpoint is included. No sale of user data
+occurs. No captured content is transferred to third parties. A human will not
+read user archive data except if the user voluntarily provides it in a support,
+legal, or security request.
+
 ## Permissions
 
-LocalArchive uses `activeTab` and context-menu activation so page access is
-initiated by the user. It does not request browsing history, cookies, extension
-management, or broad host permissions.
+LocalArchive uses `activeTab`, `scripting`, and context-menu activation so page
+access is initiated by the user. It does not request browsing history, cookies,
+extension management, storage, or broad host permissions.
 
 ## Deletion
 
@@ -42,5 +56,4 @@ removing the extension or clearing site/extension data for the profile.
 
 ## Contact
 
-Use the GitHub issue tracker for support and privacy questions after the public
-repository is created.
+Use https://localarchive.pages.dev/support/ for support and privacy questions.

@@ -12,12 +12,13 @@ assert(manifest.background.service_worker === "src/background.js", "background w
 assert(manifest.background.type === "module", "background worker must be an ES module");
 
 const permissions = new Set(manifest.permissions || []);
-for (const permission of ["activeTab", "contextMenus", "downloads", "scripting", "sidePanel", "storage"]) {
+for (const permission of ["activeTab", "contextMenus", "downloads", "scripting", "sidePanel"]) {
   assert(permissions.has(permission), `missing ${permission} permission`);
 }
 assert(!permissions.has("tabs"), "avoid tabs permission in MVP");
 assert(!permissions.has("history"), "avoid history permission in MVP");
 assert(!permissions.has("management"), "avoid management permission in MVP");
+assert(!permissions.has("storage"), "avoid storage permission when using IndexedDB directly");
 assert(!manifest.host_permissions, "avoid host permissions in MVP");
 
 await readFile(join(root, manifest.action.default_popup), "utf8");

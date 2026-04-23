@@ -1,16 +1,20 @@
 # LocalArchive Reviewer Test Instructions
 
+Submitted extension version: `0.1.1`
+
+No account, login, backend, API key, or paid feature is required.
+
 ## Install
 
 1. Open `chrome://extensions`.
 2. Enable Developer mode.
 3. Click `Load unpacked`.
-4. Select the unpacked LocalArchive extension directory or upload the packaged
-   ZIP through the Chrome Web Store review flow.
+4. Select the unpacked LocalArchive extension directory when testing locally.
 
 ## Smoke Test
 
-1. Open any readable article or documentation page.
+1. Open any readable article or documentation page, such as
+   https://localarchive.pages.dev/.
 2. Click the LocalArchive toolbar button.
 3. Click `Capture`.
 4. Open the LocalArchive library from the popup.
@@ -19,8 +23,22 @@
    LocalArchive`.
 7. Confirm the saved item shows the selected passage in the detail view.
 8. Export the selected item as Markdown or HTML.
-9. Import a small Pocket-style CSV containing `title,url,time_added,tags`.
-10. Confirm duplicate URLs are merged instead of duplicated.
+9. Import a Pocket-style CSV with this content:
+
+   ```csv
+   title,url,time_added,tags
+   LocalArchive Duplicate,https://localarchive.pages.dev/?utm_source=test,1710000000,archive
+   Pocket Only,https://example.com/pocket-only,1710000000,pocket
+   ```
+
+10. Confirm duplicate URLs are merged instead of duplicated and the import
+    summary reports two imported or merged rows.
+
+## Known Unsupported Pages
+
+Chrome blocks extension injection on `chrome://` pages, the Chrome Web Store,
+and some browser-restricted pages. Test capture on normal HTTPS article or
+documentation pages.
 
 ## Expected Network Behavior
 
@@ -35,7 +53,6 @@ exports a file.
 - `downloads`
 - `scripting`
 - `sidePanel`
-- `storage`
 
 The extension intentionally does not request `history`, `tabs`, `management`,
-`cookies`, or broad host permissions.
+`cookies`, `storage`, or broad host permissions.

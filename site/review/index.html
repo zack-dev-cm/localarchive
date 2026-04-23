@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LocalArchive Reviewer Guide</title>
+    <meta name="description" content="Reviewer smoke-test instructions for the LocalArchive Chrome extension.">
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap nav">
+        <a class="brand" href="/">LocalArchive</a>
+        <nav class="links" aria-label="Main">
+          <a href="/privacy/">Privacy</a>
+          <a href="/support/">Support</a>
+          <a href="/review/">Reviewer guide</a>
+          <a href="https://github.com/zack-dev-cm/localarchive">Source</a>
+        </nav>
+      </div>
+    </header>
+    <main class="page">
+      <div class="wrap">
+        <h1>Reviewer Guide</h1>
+        <p>LocalArchive 0.1.1 has no account, login, backend, API key, analytics endpoint, ads, or paid feature.</p>
+
+        <h2>Smoke Test</h2>
+        <ol>
+          <li>Open any readable article or documentation page, such as this LocalArchive homepage.</li>
+          <li>Click the LocalArchive toolbar button and click <strong>Capture</strong>.</li>
+          <li>Open the library from the popup and confirm the page appears.</li>
+          <li>Select a passage on the page, right-click, and choose <strong>Save selected text to LocalArchive</strong>.</li>
+          <li>Search for a word from the selected passage and confirm the saved item remains visible.</li>
+          <li>Export as Markdown or HTML and confirm Chrome downloads the file after the user action.</li>
+          <li>Import the Pocket CSV sample below and confirm duplicate URLs are merged by canonical URL.</li>
+        </ol>
+
+        <h2>Pocket CSV Sample</h2>
+        <pre><code>title,url,time_added,tags
+LocalArchive Duplicate,https://localarchive.pages.dev/?utm_source=test,1710000000,archive
+Pocket Only,https://example.com/pocket-only,1710000000,pocket</code></pre>
+
+        <h2>Expected Permission Behavior</h2>
+        <ul>
+          <li><code>activeTab</code> and <code>scripting</code> are used only after user-triggered capture.</li>
+          <li><code>contextMenus</code> creates page and selected-text save commands.</li>
+          <li><code>downloads</code> is used only after user-triggered export.</li>
+          <li><code>sidePanel</code> opens the local archive library.</li>
+        </ul>
+
+        <h2>Known Unsupported Pages</h2>
+        <p>Chrome blocks extension injection on <code>chrome://</code> pages, the Chrome Web Store, and some browser-restricted pages. Test on normal HTTPS article or documentation pages.</p>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="wrap nav">
+        <span>LocalArchive 0.1.1</span>
+        <span><a href="/">Home</a> · <a href="/privacy/">Privacy</a></span>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+{
+  "name": "LocalArchive",
+  "version": "0.1.1",
+  "category": "Tools",
+  "official_url": "https://localarchive.pages.dev/",
+  "homepage_url": "https://localarchive.pages.dev/",
+  "support_url": "https://localarchive.pages.dev/support/",
+  "privacy_policy_url": "https://localarchive.pages.dev/privacy/",
+  "reviewer_instructions_url": "https://localarchive.pages.dev/review/",
+  "source_url": "https://github.com/zack-dev-cm/localarchive",
+  "allowed_public_domains": ["localarchive.pages.dev"],
+  "single_purpose": "LocalArchive saves pages and selected text into a private local archive, supports Pocket CSV imports, and exports user-owned Markdown, HTML, or JSON files.",
+  "permission_justifications": {
+    "activeTab": "Used only after the user clicks the toolbar action or a LocalArchive context menu item so the current page can be captured.",
+    "contextMenus": "Adds user-triggered commands for saving a page or selected text.",
+    "downloads": "Creates user-requested Markdown, HTML, or JSON exports.",
+    "scripting": "Injects a local extractor script into the active tab only after user action.",
+    "sidePanel": "Opens the local archive library in Chrome's side panel."
+  },
+  "privacy_practices": {
+    "data_categories": [
+      "Website content and page text selected or captured by the user",
+      "Web browsing activity limited to saved page URLs, domains, titles, and metadata",
+      "User-provided imported Pocket CSV or JSON backup data"
+    ],
+    "storage": "All archive data is stored locally in the user's Chrome profile with IndexedDB.",
+    "network": "The extension does not send captured pages, selected text, imports, exports, search queries, or archive metadata to a server.",
+    "limited_use": "Use of information received from Chrome APIs complies with the Chrome Web Store User Data Policy, including the Limited Use requirements.",
+    "ads_or_sale": "No ads, analytics, sale of user data, or third-party transfer."
+  },
+  "reviewer_notes": [
+    "No account, login, API key, backend, or paid service is required.",
+    "The extension does not work on chrome:// pages, the Chrome Web Store, or browser-restricted pages where Chrome blocks extension injection.",
+    "Use https://localarchive.pages.dev/review/ for exact smoke-test steps and sample Pocket CSV content."
+  ],
+  "assets": {
+    "store_icon": "docs/cws/assets/store-icon-128.png",
+    "screenshot": "docs/cws/assets/screenshot-library-1280x800.png",
+    "small_promo": "docs/cws/assets/promo-small-440x280.png",
+    "marquee_promo": "docs/cws/assets/promo-marquee-1400x560.png"
+  }
+}

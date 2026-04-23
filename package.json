@@ -1,10 +1,15 @@
 {
   "name": "localarchive",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "type": "module",
   "description": "Local-first Chrome extension for saving pages, importing Pocket exports, and exporting portable archives.",
   "scripts": {
-    "test": "node --test"
+    "test": "node --test",
+    "check:cws-readiness": "node scripts/check-cws-readiness.mjs",
+    "package": "node scripts/build-release.mjs",
+    "test:e2e": "node scripts/run-real-browser-e2e.mjs",
+    "check:cws": "node scripts/check-cws-status-openclaw.mjs",
+    "verify": "npm test && node scripts/validate-extension.mjs && npm run check:cws-readiness && npm run test:e2e"
   }
 }

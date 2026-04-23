@@ -30,7 +30,14 @@ profile.
 ```bash
 node --test
 node scripts/validate-extension.mjs
+npm run check:cws-readiness
+npm run test:e2e
 ```
+
+The E2E runner launches a temporary Chrome profile with the extension loaded
+unpacked and exercises reviewer-style capture, selected-text capture, library
+search, Markdown export, and Pocket CSV import. See
+[`docs/e2e-testing.md`](docs/e2e-testing.md).
 
 ## Privacy
 
@@ -39,3 +46,10 @@ The MVP stores article data in the browser profile through IndexedDB. It does no
 The extension uses `activeTab` and context-menu activation instead of broad host
 permissions. Page access is requested only after the user clicks the extension
 button or a LocalArchive context-menu item.
+
+## Public Review Surface
+
+Chrome Web Store listing URLs, privacy disclosures, permission justifications,
+and reviewer notes are tracked in [`docs/cws/listing.json`](docs/cws/listing.json).
+The public homepage, privacy policy, support page, and reviewer guide are served
+from Cloudflare Pages using the static source in [`site/`](site/).

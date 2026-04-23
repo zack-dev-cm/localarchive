@@ -8,7 +8,7 @@ test("manifest keeps MVP permissions narrow", async () => {
   assert.equal(manifest.manifest_version, 3);
   assert.deepEqual(
     [...manifest.permissions].sort(),
-    ["activeTab", "contextMenus", "downloads", "scripting", "sidePanel", "storage"].sort(),
+    ["activeTab", "contextMenus", "downloads", "scripting", "sidePanel"].sort(),
   );
   assert.equal(manifest.host_permissions, undefined);
   assert.equal(manifest.action.default_popup, "src/popup.html");
