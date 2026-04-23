@@ -1,4 +1,5 @@
 # LocalArchive
+https://chromewebstore.google.com/detail/localarchive/glcecbjpdknkmlpcbnbpikjjclboeglo
 
 LocalArchive is a local-first Chrome extension for saving readable pages, importing Pocket CSV exports, searching a private archive, and exporting user-owned Markdown, HTML, or JSON files.
 
